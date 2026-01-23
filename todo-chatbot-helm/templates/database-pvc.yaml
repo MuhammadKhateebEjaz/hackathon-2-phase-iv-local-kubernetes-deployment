@@ -1,0 +1,18 @@
+{{- if .Values.database.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "todo-chatbot.fullname" . }}-database-pvc
+  labels:
+    {{- include "todo-chatbot.labels" . | nindent 4 }}
+    app.kubernetes.io/component: database
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.database.storage }}
+  {{- if .Values.database.storageClassName }}
+  storageClassName: {{ .Values.database.storageClassName }}
+  {{- end }}
+{{- end }}

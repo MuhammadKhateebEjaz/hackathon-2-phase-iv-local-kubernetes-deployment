@@ -1,0 +1,1 @@
+Project: Cloud Native Todo Chatbot Goal: Deploy on Local Kubernetes (Minikube) using Helm Stack: React (Frontend), Node.js (Backend), Docker, Helm, Minikube
